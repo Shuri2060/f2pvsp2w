@@ -2,7 +2,8 @@ function main() {
   var container = document.getElementById("canvas") || document.body;
   var isCanvas = (container instanceof HTMLCanvasElement);
   var canvas = isCanvas ? container : document.createElement("canvas");
-
+  const ctx = canvas.getContext('2d');
+  
   if (!isCanvas) {
     container.appendChild(canvas);
   }
