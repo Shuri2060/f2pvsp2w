@@ -2,16 +2,7 @@
 
 /////NEED TO ANALYSE CODE
 
-/* Licensed under a BSD license. See license.html for license */
-"use strict";
-
 function main() {
-  // Get A WebGL context
-
-  // Here we do this one 1 of 2 ways like many WebGL libraries. Either
-  // we have a canvas on the page. Or else we have container and we
-  // insert a canvas inside that container.
-  // If we don't find a container we use the body of the document.
   var container = document.getElementById("canvas") || document.body;
   var isCanvas = (container instanceof HTMLCanvasElement);
   var canvas = isCanvas ? container : document.createElement("canvas");
