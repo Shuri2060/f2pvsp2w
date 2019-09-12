@@ -1,7 +1,9 @@
-const Math_PI = Math.PI
-const Math_2PI = Math_PI * 2
+import game.js
 
 function main() {
+  const Math_PI = Math.PI
+  const Math_2PI = Math_PI * 2
+  
   const canvas = document.getElementById("gameCanvas")
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
@@ -10,12 +12,20 @@ function main() {
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus() //not 100% sure what this does
   
+  var canvasWidth = canvas.width
+  var canvasHeight = canvas.height
+  
   function beforeFrame(time) { //let's name it something better later
     
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      
+      canvasWidth = canvas.width
+      canvasHeight = canvas.height
+    }
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
 
