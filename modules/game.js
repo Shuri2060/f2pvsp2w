@@ -1,3 +1,5 @@
+//change ~~ to | 0
+
 class Game2D2Object {
 //  static id = 0
   
