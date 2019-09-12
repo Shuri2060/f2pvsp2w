@@ -16,7 +16,7 @@ function main() {
   
   //Apparently all this setup is needed ^. Who knows.
   
-  requestAnimationFrame(drawScene);
+  requestAnimationFrame(beforeFrame);
 
   var t = 0 //test
   
