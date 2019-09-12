@@ -5,6 +5,10 @@ function main() {
   var container = document.getElementById("canvas") || document.body;
   var isCanvas = (container instanceof HTMLCanvasElement);
   var canvas = isCanvas ? container : document.createElement("canvas");
+  
+  canvas.width = document.body.clientWidth;
+  canvas.height = document.body.clientHeight;
+  
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus()
   
