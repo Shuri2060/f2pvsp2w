@@ -1,5 +1,3 @@
-import 'game.js'
-
 function main() {
   const Math_PI = Math.PI
   const Math_2PI = Math_PI * 2
