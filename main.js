@@ -12,7 +12,7 @@ function main() {
   
   function beforeFrame(time) { //let's name it something better later
     
-    canvas.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
