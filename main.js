@@ -2,26 +2,31 @@ const Math_PI = Math.PI
 const Math_2PI = Math_PI * 2
 
 function main() {
-  var canvas = document.getElementById("gameCanvas")
-  
+  const canvas = document.getElementById("gameCanvas")
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
+  const ctx = canvas.getContext('2d')
   
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus()
   
-  const ctx = canvas.getContext('2d')
-  
   //Apparently all this setup is needed ^. Who knows.
   
-  requestAnimationFrame(beforeFrame)
-
-  var t = 0 //test
+  const cacheCanvas = document.createElement('canvas');
+  cacheCanvas.width = canvas.width
+  cacheCanvas.height = canvas.height
+  const cacheCtx = cacheCanvas.getContext('2d');
   
-  function beforeFrame(time) { //let's name it something better later
+  var t = 0 //test
 
+  function beforeFrame(time) { //let's name it something better later
+    
+    cacheCtx.drawImage(canvas, 0, 0);
+    
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
+    
+    ctx.drawImage(cacheCanvas, 0, 0);
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
 
@@ -37,6 +42,7 @@ function main() {
     
     requestAnimationFrame(beforeFrame)
   }
+  requestAnimationFrame(beforeFrame)
 }
 
 // Check if we're running in jQuery
