@@ -4,8 +4,8 @@ const Math_2PI = Math_PI * 2
 function main() {
   var canvas = document.getElementById("gameCanvas")
   
-  canvas.width = document.body.clientWidth
-  canvas.height = document.body.clientHeight
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
   
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus()
@@ -20,8 +20,9 @@ function main() {
   
   function beforeFrame(time) { //let's name it something better later
 
-    //webglUtils.resizeCanvasToDisplaySize(gl.canvas); // Analyze later
-
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
 
     //All updating and drawing code... here!
@@ -30,7 +31,7 @@ function main() {
     
     ctx.beginPath()
     ctx.arc(100+t, 100+t, 10, 0, Math_2PI)
-    ctx.fillStyle = "#9400D3"
+    ctx.fillStyle = "#0095DD"
     ctx.fill()
     ctx.closePath()
     
