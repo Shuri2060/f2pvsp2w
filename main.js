@@ -1,4 +1,4 @@
-import game.js
+import 'game.js'
 
 function main() {
   const Math_PI = Math.PI
