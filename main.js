@@ -21,12 +21,12 @@ function main() {
 
   function beforeFrame(time) { //let's name it something better later
     
-    cacheCtx.drawImage(canvas, 0, 0);
+//     cacheCtx.drawImage(canvas, 0, 0);
     
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+//     canvas.width = window.innerWidth
+//     canvas.height = window.innerHeight
     
-    ctx.drawImage(cacheCanvas, 0, 0);
+//     ctx.drawImage(cacheCanvas, 0, 0);
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
 
