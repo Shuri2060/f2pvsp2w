@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background-color: #101010;
+  color: #ffffff;
 }
 canvas {
   display: block;  /*prevents scrollbar*/
