@@ -2,25 +2,19 @@ const Math_PI = Math.PI
 const Math_2PI = Math_PI * 2
 
 function main() {
-  var container = document.getElementById("canvas") || document.body;
-  var isCanvas = (container instanceof HTMLCanvasElement);
-  var canvas = isCanvas ? container : document.createElement("canvas");
+  var canvas = document.getElementById("gameCanvas")
   
-  canvas.width = document.body.clientWidth;
-  canvas.height = document.body.clientHeight;
+  canvas.width = document.body.clientWidth
+  canvas.height = document.body.clientHeight
   
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus()
   
-  const ctx = canvas.getContext('2d');
-  
-  if (!isCanvas) {
-    container.appendChild(canvas);
-  }
+  const ctx = canvas.getContext('2d')
   
   //Apparently all this setup is needed ^. Who knows.
   
-  requestAnimationFrame(beforeFrame);
+  requestAnimationFrame(beforeFrame)
 
   var t = 0 //test
   
@@ -34,13 +28,13 @@ function main() {
     
     t += 1
     
-    ctx.beginPath();
-    ctx.arc(100+t, 100+t, 10, 0, Math_2PI);
-    ctx.fillStyle = "#0095DD";
-    ctx.fill();
-    ctx.closePath();
+    ctx.beginPath()
+    ctx.arc(100+t, 100+t, 10, 0, Math_2PI)
+    ctx.fillStyle = "#0095DD"
+    ctx.fill()
+    ctx.closePath()
     
-    requestAnimationFrame(beforeFrame);
+    requestAnimationFrame(beforeFrame)
   }
 }
 
@@ -50,5 +44,5 @@ if (window.$) {
     main();
   });
 } else {
-  window.addEventListener('load', main);
+  window.addEventListener('load', main)
 }
