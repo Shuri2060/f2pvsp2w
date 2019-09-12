@@ -6,6 +6,7 @@ function main() {
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
   const ctx = canvas.getContext('2d')
+  ctx.imageSmoothingEnabled = false;
   
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus()
@@ -16,17 +17,18 @@ function main() {
   cacheCanvas.width = canvas.width
   cacheCanvas.height = canvas.height
   const cacheCtx = cacheCanvas.getContext('2d');
+  cacheCtx.imageSmoothingEnabled = false;
   
   var t = 0 //test
 
   function beforeFrame(time) { //let's name it something better later
     
-//     cacheCtx.drawImage(canvas, 0, 0);
+    cacheCtx.drawImage(canvas, 0, 0);
     
-//     canvas.width = window.innerWidth
-//     canvas.height = window.innerHeight
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
     
-//     ctx.drawImage(cacheCanvas, 0, 0);
+    ctx.drawImage(cacheCanvas, 0, 0);
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
 
