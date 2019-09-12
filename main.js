@@ -30,7 +30,7 @@ function main() {
     
     ctx.beginPath()
     ctx.arc(100+t, 100+t, 10, 0, Math_2PI)
-    ctx.fillStyle = "#0095DD"
+    ctx.fillStyle = "#9400D3"
     ctx.fill()
     ctx.closePath()
     
