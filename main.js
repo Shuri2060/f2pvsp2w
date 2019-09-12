@@ -8,48 +8,22 @@ function main() {
   const ctx = canvas.getContext('2d')
   
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
-  canvas.focus()
+  canvas.focus() //not 100% sure what this does
   
-  //Apparently all this setup is needed ^. Who knows.
-  
-  const cacheCanvas = document.createElement('canvas');
-  cacheCanvas.width = canvas.width
-  cacheCanvas.height = canvas.height
-  const cacheCtx = cacheCanvas.getContext('2d');
-
-//   ctx.beginPath()
-//   ctx.arc(100, 100, 10, 0, Math_2PI)
-//   ctx.fillStyle = "#0095DD"
-//   ctx.fill()
-//   ctx.closePath()
-  
-//   cacheCtx.drawImage(canvas, 0, 0)
-//   canvas.width = window.innerWidth
-//   canvas.height = window.innerHeight
-//   ctx.drawImage(cacheCanvas, 0, 0)
-  
-  var t = 1 //test
-
   function beforeFrame(time) { //let's name it something better later
     
-    cacheCanvas.width = window.innerWidth
-    cacheCanvas.height = window.innerHeight
-    cacheCtx.drawImage(canvas, 0, 0)
+    canvas.clearRect(0, 0, canvas.width, canvas.height)
     
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
-    
-    ctx.drawImage(cacheCanvas, 0, 0)
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
 
     //All updating and drawing code... here!
     
-    t += t
-    
     ctx.beginPath()
-    ctx.arc(100+t, 100+t, 10, 0, Math_2PI)
-    ctx.fillStyle = "#0095DD"
+    ctx.arc(100, 100, 10, 0, Math_2PI)
+    ctx.fillStyle = "#FFFFFF"
     ctx.fill()
     ctx.closePath()
     
@@ -58,7 +32,7 @@ function main() {
   requestAnimationFrame(beforeFrame)
 }
 
-// Check if we're running in jQuery
+// Check if we're running in jQuery // Not entirely sure what this does either
 if (window.$) {
   window.$(function(){
     main();
