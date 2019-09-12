@@ -17,18 +17,18 @@ function main() {
   cacheCanvas.height = canvas.height
   const cacheCtx = cacheCanvas.getContext('2d');
 
-  ctx.beginPath()
-  ctx.arc(100, 100, 10, 0, Math_2PI)
-  ctx.fillStyle = "#0095DD"
-  ctx.fill()
-  ctx.closePath()
+//   ctx.beginPath()
+//   ctx.arc(100, 100, 10, 0, Math_2PI)
+//   ctx.fillStyle = "#0095DD"
+//   ctx.fill()
+//   ctx.closePath()
   
-  cacheCtx.drawImage(canvas, 0, 0);
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
-  ctx.drawImage(cacheCanvas, 0, 0);
+//   cacheCtx.drawImage(canvas, 0, 0);
+//   canvas.width = window.innerWidth
+//   canvas.height = window.innerHeight
+//   ctx.drawImage(cacheCanvas, 0, 0);
   
-  var t = 0 //test
+  var t = 1 //test
 
   function beforeFrame(time) { //let's name it something better later
     
@@ -43,7 +43,7 @@ function main() {
 
     //All updating and drawing code... here!
     
-    t += 1
+    t += t
     
     ctx.beginPath()
     ctx.arc(100+t, 100+t, 10, 0, Math_2PI)
@@ -53,7 +53,7 @@ function main() {
     
     requestAnimationFrame(beforeFrame)
   }
-//   requestAnimationFrame(beforeFrame)
+  requestAnimationFrame(beforeFrame)
 }
 
 // Check if we're running in jQuery
