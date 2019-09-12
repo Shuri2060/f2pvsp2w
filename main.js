@@ -32,6 +32,8 @@ function main() {
 
   function beforeFrame(time) { //let's name it something better later
     
+    cacheCanvas.width = window.innerWidth
+    cacheCanvas.height = window.innerHeight
     cacheCtx.drawImage(canvas, 0, 0)
     
     canvas.width = window.innerWidth
