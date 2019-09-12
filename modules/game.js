@@ -239,3 +239,5 @@ for (let i = 0; i < 50000; i++) {
 }
 var test = time(colCheck, 100)
 /**/
+
+export {}
