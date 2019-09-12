@@ -1,22 +1,8 @@
 //*DEBUG
-function time(func, n) {
-  return function () {
-    let t = 0
-    for (let i = n; i--;) {
-      let d = performance.now()
-      func.apply(this, arguments)
-      d = performance.now() - d
-      t += d
-    }
-    console.log(t / n)
-  }
-}
-
-var x = []
+var objs = []
 for (let i = 0; i < 50000; i++) {
-  x[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 5, ay: (Math.random() - 0.5) * 5, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: (Math.random() - 0.5) * 25})
+  objs[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 5, ay: (Math.random() - 0.5) * 5, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: (Math.random() - 0.5) * 25})
 }
-var test = time(colCheck, 100)
 /**/
 
 function main() {
@@ -34,10 +20,12 @@ function main() {
   var canvasWidth = canvas.width
   var canvasHeight = canvas.height
   
-  function beforeFrame(time) { //let's name it something better later
+  var dt = 0
   
-    console.log(time) //DEBUG
+  function beforeFrame(time) { //let's name it something better later
     
+    dt = time - dt
+   
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
@@ -52,8 +40,10 @@ function main() {
 
     //All updating and drawing code... here!
     
+    
+    
     ctx.beginPath()
-    ctx.arc(100, 100, 10, 0, Math_2PI)
+    ctx.arc(100, 100, 0, 0, Math_2PI)
     ctx.fillStyle = "#FFFFFF"
     ctx.fill()
     ctx.closePath()
