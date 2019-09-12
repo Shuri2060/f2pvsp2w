@@ -6,7 +6,6 @@ function main() {
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
   const ctx = canvas.getContext('2d')
-  ctx.imageSmoothingEnabled = false;
   
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus()
@@ -17,7 +16,15 @@ function main() {
   cacheCanvas.width = canvas.width
   cacheCanvas.height = canvas.height
   const cacheCtx = cacheCanvas.getContext('2d');
-  cacheCtx.imageSmoothingEnabled = false;
+
+  ctx.beginPath()
+  ctx.arc(100, 100, 10, 0, Math_2PI)
+  ctx.fillStyle = "#0095DD"
+  ctx.fill()
+  ctx.closePath()
+  
+  cacheCtx.drawImage(canvas, 0, 0);
+  ctx.drawImage(cacheCanvas, 0, 0);
   
   var t = 0 //test
 
@@ -44,7 +51,7 @@ function main() {
     
     requestAnimationFrame(beforeFrame)
   }
-  requestAnimationFrame(beforeFrame)
+//   requestAnimationFrame(beforeFrame)
 }
 
 // Check if we're running in jQuery
