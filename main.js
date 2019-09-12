@@ -28,7 +28,7 @@ function main() {
 
     //All updating and drawing code... here!
     
-    t += 0.001
+    t += 0.01
     
     ctx.beginPath();
     ctx.arc(100+t, 100+t, 10, 0, Math_2PI);
