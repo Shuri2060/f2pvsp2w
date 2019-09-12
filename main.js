@@ -24,7 +24,8 @@ function main() {
   ctx.closePath()
   
   cacheCtx.drawImage(canvas, 0, 0);
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
   ctx.drawImage(cacheCanvas, 0, 0);
   
   var t = 0 //test
