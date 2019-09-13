@@ -34,10 +34,13 @@ function main() {
   var gameBottom = gameTop + gameHeight
   
   var dt = 0
+  var lastTime = 0
   
   function beforeFrame(time) { //let's name it something better later
     
-    dt = time / 1000 - dt
+    dt = time - lastTime
+    lastTime = time
+    
     console.log(dt) //DEBUG
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
