@@ -19,9 +19,6 @@ function main() {
   canvas.height = window.innerHeight
   const ctx = canvas.getContext('2d')
   
-  console.log(ctx.imageSmoothingEnabled)
-  ctx.imageSmoothingEnabled = true
-  
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus() //not 100% sure what this does
   
