@@ -38,8 +38,10 @@ function main() {
   
   function beforeFrame(time) { //let's name it something better later
     
-    dt = time - lastTime
-    lastTime = time / 1000
+    const timeSec = time / 1000
+    
+    dt = timeSec - lastTime
+    lastTime = timeSec
     
     console.log(dt) //DEBUG
     
