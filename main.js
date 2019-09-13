@@ -30,6 +30,10 @@ function main() {
   const Math_PI = Math.PI
   const Math_2PI = Math_PI * 2
   
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
+  
   const canvas = document.getElementById("gameCanvas")
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
@@ -62,6 +66,8 @@ function main() {
     //console.log(dt) //DEBUG
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
+      
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
       
