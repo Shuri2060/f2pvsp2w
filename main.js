@@ -65,7 +65,7 @@ function main() {
     
     //console.log(dt) //DEBUG
     
-    if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
+    if (canvasWidth !== window.innerWidth || canvasHeight !== window.innerHeight) {
       document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
       
       canvas.width = window.innerWidth
