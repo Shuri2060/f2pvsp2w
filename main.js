@@ -59,11 +59,11 @@ function main() {
     //All updating and drawing code... here!
     
     for (let i = objs.length; i--;) {
-      let objsI = objs[i]
+      const objsI = objs[i]
       
       ctx.beginPath()
       ctx.arc((gameLeft + objsI.sx * gameCanvasRatio) | 0, (gameTop + objsI.sy * gameCanvasRatio) | 0, (objsI.r * gameCanvasRatio) | 0, 0, Math_2PI)
-      ctx.strokeStyle = "#0000FF"
+      //ctx.strokeStyle = "#0000FF"
       ctx.fillStyle = "#FFFFFF"
       ctx.fill()
       ctx.closePath()
