@@ -6,7 +6,7 @@ var maxY = 1024
 
 var objArr = []
 for (let i = 0; i < 500; i++) {
-  objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 5, vy: (Math.random() - 0.5) * 5, ax: (Math.random() - 0.5) * 0.000000001, ay: (Math.random() - 0.5) * 0.000000001, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
+  objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 5, vy: (Math.random() - 0.5) * 5, ax: (Math.random() - 0.5) * 0, ay: (Math.random() - 0.5) * 0, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
 }
 /**/
 
@@ -70,11 +70,11 @@ function main() {
       const objArrI = objArr[i]
       
       ctx.beginPath()
-      ctx.strokeStyle = "#0000FF"
-      ctx.lineWidth = 4
+//       ctx.strokeStyle = "#0000FF"
+//       ctx.lineWidth = 4
       ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio) | 0, (gameTop + objArrI.sy * gameCanvasRatio) | 0, (objArrI.r * gameCanvasRatio) | 0, 0, Math_2PI)
       ctx.fillStyle = "#FFFFFF"
-      //ctx.fill()
+      ctx.fill()
       ctx.closePath()
     }
     
