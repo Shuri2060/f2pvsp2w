@@ -2,6 +2,7 @@
 
 //*DEBUG
 var fps = 0
+var fpsUpdate = 0
 
 var maxX = 1024
 var maxY = 1024
@@ -87,10 +88,14 @@ function main() {
     }
     
     //DEBUG
-    fps = 1 / dt
-    ctx.font = '50px Consolas';
-    ctx.fillStyle = '#FF0000';
-    ctx.fillText(fps.toFixed(2), gameRight - 120, gameTop + 60);
+    if (time - fpsUpdate > 1000) {
+      fpsUpdate += 1000
+      
+      fps = 1 / dt
+      ctx.font = '50px Consolas';
+      ctx.fillStyle = '#FF0000';
+      ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 120, gameTop + 60);
+    }
     
     requestAnimationFrame(beforeFrame)
   }
