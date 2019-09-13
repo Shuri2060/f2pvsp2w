@@ -8,7 +8,7 @@ var maxX = 1024
 var maxY = 1024
 
 var objArr = []
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 500; i++) {
   objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 40, vy: (Math.random() - 0.5) * 40, ax: (Math.random() - 0.5) * 0.01, ay: (Math.random() - 0.5) * 0.01, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
 }
 /**/
@@ -86,6 +86,7 @@ function main() {
         const collJ = collisions[j]
         if (collJ[0] === objArrI || collJ[1] === objArrI) {
           ctx.fillStyle = "#FFA500"
+          break;
         } else {
           ctx.fillStyle = "#FFFFFF"
         }
