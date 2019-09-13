@@ -4,9 +4,9 @@
 var maxX = 1024
 var maxY = 1024
 
-var objs = []
+var objArr = []
 for (let i = 0; i < 500; i++) {
-  objs[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 5, ay: (Math.random() - 0.5) * 5, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
+  objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 5, ay: (Math.random() - 0.5) * 5, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
 }
 /**/
 
@@ -38,8 +38,6 @@ function main() {
   function beforeFrame(time) { //let's name it something better later
     
     dt = time - dt
-   
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
       canvas.width = window.innerWidth
@@ -60,12 +58,18 @@ function main() {
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
     
     //All updating and drawing code... here!
+    //updating
+    simPhys(objArr, dt)
+    colCheck(objArr)
     
-    for (let i = objs.length; i--;) {
-      const objsI = objs[i]
+    //drawing
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    
+    for (let i = objArr.length; i--;) {
+      const objArrI = objArr[i]
       
       ctx.beginPath()
-      ctx.arc((gameLeft + objsI.sx * gameCanvasRatio) | 0, (gameTop + objsI.sy * gameCanvasRatio) | 0, (objsI.r * gameCanvasRatio) | 0, 0, Math_2PI)
+      ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio) | 0, (gameTop + objArrI.sy * gameCanvasRatio) | 0, (objArrI.r * gameCanvasRatio) | 0, 0, Math_2PI)
       ctx.strokeStyle = "#0000FF"
       ctx.fillStyle = "#FFFFFF"
       ctx.fill()
