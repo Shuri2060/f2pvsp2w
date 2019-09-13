@@ -37,7 +37,7 @@ function main() {
   
   function beforeFrame(time) { //let's name it something better later
     
-    dt = time - dt
+    dt = time / 1000 - dt
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
       canvas.width = window.innerWidth
