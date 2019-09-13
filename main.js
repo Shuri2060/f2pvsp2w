@@ -74,7 +74,7 @@ function main() {
       ctx.lineWidth = 4
       ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio) | 0, (gameTop + objArrI.sy * gameCanvasRatio) | 0, (objArrI.r * gameCanvasRatio) | 0, 0, Math_2PI)
       ctx.fillStyle = "#FFFFFF"
-      ctx.fill()
+      //ctx.fill()
       ctx.closePath()
     }
     
