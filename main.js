@@ -19,6 +19,9 @@ function main() {
   canvas.height = window.innerHeight
   const ctx = canvas.getContext('2d')
   
+  console.log(ctx.imageSmoothingEnabled)
+  ctx.imageSmoothingEnabled = true
+  
   if (document.activeElement && document.activeElement != canvas) {document.activeElement.blur()}
   canvas.focus() //not 100% sure what this does
   
@@ -43,7 +46,7 @@ function main() {
     dt = timeSec - lastTime
     lastTime = timeSec
     
-    console.log(dt) //DEBUG
+    //console.log(dt) //DEBUG
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
       canvas.width = window.innerWidth
