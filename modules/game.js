@@ -118,9 +118,9 @@ function colCheck(objArr) {
     const y2trun = (((objIsy + objIr) / gridCellY) | 0) + 1
     
     if (x1 < 0) {
-      for (let j = (x1 | 0) + gridX; j < gridX; j++) {
+      for (let j = (x1 + gridX) | 0; j < gridX; j++) {
         if (y1 < 0) {
-          for (let k = (y1 | 0) + gridY; k < gridY; k++) {grid[j][k].push(objI)}
+          for (let k = (y1 + gridY) | 0; k < gridY; k++) {grid[j][k].push(objI)}
           for (let k = y2trun; k--;) {grid[j][k].push(objI)}
         } else if (y2trun > gridY) {
           for (let k = y1 | 0; k < gridY; k++) {grid[j][k].push(objI)}
@@ -131,7 +131,7 @@ function colCheck(objArr) {
       }
       for (let j = x2trun; j--;) {
         if (y1 < 0) {
-          for (let k = (y1 | 0) + gridY; k < gridY; k++) {grid[j][k].push(objI)}
+          for (let k = (y1 + gridY) | 0; k < gridY; k++) {grid[j][k].push(objI)}
           for (let k = y2trun; k--;) {grid[j][k].push(objI)}
         } else if (y2trun > gridY) {
           for (let k = y1 | 0; k < gridY; k++) {grid[j][k].push(objI)}
@@ -143,7 +143,7 @@ function colCheck(objArr) {
     } else if (x2trun > gridX) {
       for (let j = x1 | 0; j < gridX; j++) {
         if (y1 < 0) {
-          for (let k = y1 | 0 + gridY; k < gridY; k++) {grid[j][k].push(objI)}
+          for (let k = (y1 + gridY) | 0; k < gridY; k++) {grid[j][k].push(objI)}
           for (let k = y2trun; k--;) {grid[j][k].push(objI)}
         } else if (y2trun > gridY) {
           for (let k = y1 | 0; k < gridY; k++) {grid[j][k].push(objI)}
@@ -154,7 +154,7 @@ function colCheck(objArr) {
       }
       for (let j = x2trun - gridX; j--;) {
         if (y1 < 0) {
-          for (let k = y1 | 0 + gridY; k < gridY; k++) {grid[j][k].push(objI)}
+          for (let k = (y1 + gridY) | 0; k < gridY; k++) {grid[j][k].push(objI)}
           for (let k = y2trun; k--;) {grid[j][k].push(objI)}
         } else if (y2trun > gridY) {
           for (let k = y1 | 0; k < gridY; k++) {grid[j][k].push(objI)}
@@ -166,7 +166,7 @@ function colCheck(objArr) {
     } else {
       for (let j = x1 | 0; j < x2trun; j++) {
         if (y1 < 0) {
-          for (let k = y1 | 0 + gridY; k < gridY; k++) {grid[j][k].push(objI)}
+          for (let k = (y1 + gridY) | 0; k < gridY; k++) {grid[j][k].push(objI)}
           for (let k = y2trun; k--;) {grid[j][k].push(objI)}
         } else if (y2trun > gridY) {
           for (let k = y1 | 0; k < gridY; k++) {grid[j][k].push(objI)}
