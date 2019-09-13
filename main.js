@@ -60,7 +60,7 @@ function main() {
     //All updating and drawing code... here!
     //updating
     simPhysics(objArr, dt)
-    colCheck(objArr)
+    //colCheck(objArr)
     
     //drawing
     ctx.clearRect(0, 0, canvas.width, canvas.height)
