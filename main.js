@@ -45,12 +45,6 @@ function main() {
     dt = timeSec - lastTime
     lastTime = timeSec
     
-    //DEBUG
-    fps = 0.001 / dt
-    ctx.font = '30px Consolas';
-    ctx.fillStyle = '#FF0000';
-    ctx.fillText(fps, gameRight - 100, gameTop - 40);
-    
     //console.log(dt) //DEBUG
     
     if (canvasWidth !== window.innerWidth || canvasHeight != window.innerHeight) {
@@ -91,6 +85,12 @@ function main() {
       ctx.fill()
       ctx.closePath()
     }
+    
+    //DEBUG
+    fps = 0.001 / dt
+    ctx.font = '50px Consolas';
+    ctx.fillStyle = '#FF0000';
+    ctx.fillText(fps, gameRight - 120, gameTop - 60);
     
     requestAnimationFrame(beforeFrame)
   }
