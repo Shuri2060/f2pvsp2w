@@ -1,3 +1,5 @@
+//Top Left is origin
+
 //*DEBUG
 var objs = []
 for (let i = 0; i < 50000; i++) {
@@ -20,6 +22,10 @@ function main() {
   var canvasWidth = canvas.width
   var canvasHeight = canvas.height
   
+  var gameCanvasRatio = Math.min(canvasWidth / maxX, canvasHeight / maxY)
+  var gameWidth = maxX * gameCanvasRatio, gameHeight = maxY * gameCanvasRatio
+  var gameLeft = (canvasWidth - gameWidth) / 2, gameRight = gameLeft + gameWidth, gameTop = (canvasHeight - gameHeight) / 2, gameBottom = gameTop + gameHeight
+  
   var dt = 0
   
   function beforeFrame(time) { //let's name it something better later
@@ -34,19 +40,23 @@ function main() {
       
       canvasWidth = canvas.width
       canvasHeight = canvas.height
+      
     }
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
-
+    
     //All updating and drawing code... here!
     
-    
-    
-    ctx.beginPath()
-    ctx.arc(100, 100, 0, 0, Math_2PI)
-    ctx.fillStyle = "#FFFFFF"
-    ctx.fill()
-    ctx.closePath()
+    for (let i = objs.length; i--;) {
+      let objsI = objs[i]
+      
+      ctx.beginPath()
+      ctx.arc((gameLeft + objsI.sx * gameCanvasRatio) | 0, (gameTop + objsI.sy * gameCanvasRatio) | 0, (objsI.r * gameCanvasRatio) | 0, 0, Math_2PI)
+      ctx.strokeStyle = "#0000FF"
+      ctx.fillStyle = "#FFFFFF"
+      ctx.fill()
+      ctx.closePath()
+    }
     
     requestAnimationFrame(beforeFrame)
   }
