@@ -45,7 +45,11 @@ function main() {
     dt = timeSec - lastTime
     lastTime = timeSec
     
-    fps = 0.001 / dt //DEBUG
+    //DEBUG
+    fps = 0.001 / dt
+    ctx.font = '30px Consolas';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(fps, gameRight - 100, gameTop - 40);
     
     //console.log(dt) //DEBUG
     
