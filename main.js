@@ -4,11 +4,11 @@
 var fps = 0
 var fpsUpdate = 0
 
-var maxX = 1024
-var maxY = 1024
+maxX = 1024
+maxY = 1024
 
-var grid = [], gridCellX = 64, gridCellY = 64
-var gridX = maxX / gridCellX, gridY = maxY / gridCellY //might change to let/const in future
+grid = [], gridCellX = 64, gridCellY = 64
+gridX = maxX / gridCellX, gridY = maxY / gridCellY //might change to let/const in future
 
 for (let i = 0; i < gridX; i++) {
   grid[i] = []
