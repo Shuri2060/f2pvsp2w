@@ -2,8 +2,8 @@
 
 //*DEBUG
 var objs = []
-for (let i = 0; i < 50000; i++) {
-  objs[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 5, ay: (Math.random() - 0.5) * 5, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: (Math.random() - 0.5) * 250})
+for (let i = 0; i < 500; i++) {
+  objs[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 5, ay: (Math.random() - 0.5) * 5, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: (Math.random() - 0.5) * 25})
 }
 /**/
 
