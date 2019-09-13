@@ -88,7 +88,7 @@ function colCheck(objArr) {
 }
 /**/
 //*Grid
-const grid = [], gridCellX = 64, gridCellY = 64
+var grid = [], gridCellX = 64, gridCellY = 64
 var gridX = maxX / gridCellX, gridY = maxY / gridCellY //might change to let/const in future
 
 for (let i = 0; i < gridX; i++) {
