@@ -92,10 +92,10 @@ function main() {
       fpsUpdate += 1000
       
       fps = 1 / dt
-      ctx.font = '50px Consolas';
-      ctx.fillStyle = '#FF0000';
-      ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 120, gameTop + 60);
     }
+    ctx.font = '30px Consolas';
+    ctx.fillStyle = '#FF0000';
+    ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 200, gameTop + 60);
     
     requestAnimationFrame(beforeFrame)
   }
