@@ -7,6 +7,8 @@ body {
 }
 canvas {
   display: block;  /*prevents scrollbar*/
-  width: 100vw;
+  width: 100vw; /* Fallback for browsers that do not support Custom Properties */
   height: 100vh;
+  width: calc(var(--vw, 1vw) * 100);
+  height: calc(var(--vh, 1vh) * 100);
 }
