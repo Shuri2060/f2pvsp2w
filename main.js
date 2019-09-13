@@ -6,7 +6,7 @@ var maxY = 1024
 
 var objArr = []
 for (let i = 0; i < 500; i++) {
-  objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 0.1, ay: (Math.random() - 0.5) * 0.1, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
+  objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 20, vy: (Math.random() - 0.5) * 20, ax: (Math.random() - 0.5) * 0.001, ay: (Math.random() - 0.5) * 0.001, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 25})
 }
 /**/
 
