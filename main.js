@@ -93,7 +93,7 @@ function main() {
       
       fps = 1 / dt
     }
-    ctx.font = '30px Consolas';
+    ctx.font = '40px Consolas';
     ctx.fillStyle = '#FF0000';
     ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 200, gameTop + 60);
     
