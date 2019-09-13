@@ -23,8 +23,12 @@ function main() {
   var canvasHeight = canvas.height
   
   var gameCanvasRatio = Math.min(canvasWidth / maxX, canvasHeight / maxY)
-  var gameWidth = maxX * gameCanvasRatio, gameHeight = maxY * gameCanvasRatio
-  var gameLeft = (canvasWidth - gameWidth) / 2, gameRight = gameLeft + gameWidth, gameTop = (canvasHeight - gameHeight) / 2, gameBottom = gameTop + gameHeight
+  var gameWidth = maxX * gameCanvasRatio
+  var gameHeight = maxY * gameCanvasRatio
+  var gameLeft = (canvasWidth - gameWidth) / 2
+  var gameRight = gameLeft + gameWidth
+  var gameTop = (canvasHeight - gameHeight) / 2
+  var gameBottom = gameTop + gameHeight
   
   var dt = 0
   
@@ -41,6 +45,13 @@ function main() {
       canvasWidth = canvas.width
       canvasHeight = canvas.height
       
+      var gameCanvasRatio = Math.min(canvasWidth / maxX, canvasHeight / maxY)
+      var gameWidth = maxX * gameCanvasRatio
+      var gameHeight = maxY * gameCanvasRatio
+      var gameLeft = (canvasWidth - gameWidth) / 2
+      var gameRight = gameLeft + gameWidth
+      var gameTop = (canvasHeight - gameHeight) / 2
+      var gameBottom = gameTop + gameHeight
     }
     
     //var aspect = canvas.clientWidth / canvas.clientHeight; // needed for later probs
