@@ -59,7 +59,7 @@ function main() {
     
     //All updating and drawing code... here!
     //updating
-    simPhys(objArr, dt)
+    simPhysics(objArr, dt)
     colCheck(objArr)
     
     //drawing
