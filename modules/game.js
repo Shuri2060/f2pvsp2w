@@ -50,7 +50,7 @@ function simPhysics(objArr, dt) {
   }
 }
 
-const maxX = 32768, maxY = 32768
+var maxX = 32768, maxY = 32768 //might change to let/const in future
 
 /*Brute Force
 function colCheck(objArr) {
@@ -89,7 +89,7 @@ function colCheck(objArr) {
 /**/
 //*Grid
 const grid = [], gridCellX = 64, gridCellY = 64
-const gridX = maxX / gridCellX, gridY = maxY / gridCellY
+var gridX = maxX / gridCellX, gridY = maxY / gridCellY //might change to let/const in future
 
 for (let i = 0; i < gridX; i++) {
   grid[i] = []
