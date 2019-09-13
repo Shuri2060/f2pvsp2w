@@ -48,7 +48,7 @@ function main() {
     //DEBUG
     fps = 0.001 / dt
     ctx.font = '30px Consolas';
-    ctx.fillStyle = '#FFFFFF';
+    ctx.fillStyle = '#FF0000';
     ctx.fillText(fps, gameRight - 100, gameTop - 40);
     
     //console.log(dt) //DEBUG
