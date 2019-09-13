@@ -90,7 +90,7 @@ function main() {
     fps = 0.001 / dt
     ctx.font = '50px Consolas';
     ctx.fillStyle = '#FF0000';
-    ctx.fillText(fps, gameRight - 120, gameTop - 60);
+    ctx.fillText(fps, gameRight - 120, gameTop + 60);
     
     requestAnimationFrame(beforeFrame)
   }
