@@ -7,8 +7,18 @@ var fpsUpdate = 0
 var maxX = 1024
 var maxY = 1024
 
+var grid = [], gridCellX = 64, gridCellY = 64
+var gridX = maxX / gridCellX, gridY = maxY / gridCellY //might change to let/const in future
+
+for (let i = 0; i < gridX; i++) {
+  grid[i] = []
+  for (let j = 0; j < gridY; j++) {
+    grid[i][j] = []
+  }
+}
+
 var objArr = []
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 50; i++) {
   objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 40, vy: (Math.random() - 0.5) * 40, ax: (Math.random() - 0.5) * 0.01, ay: (Math.random() - 0.5) * 0.01, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 100})
 }
 /**/
