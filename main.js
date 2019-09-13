@@ -39,7 +39,7 @@ function main() {
   function beforeFrame(time) { //let's name it something better later
     
     dt = time - lastTime
-    lastTime = time
+    lastTime = time / 1000
     
     console.log(dt) //DEBUG
     
