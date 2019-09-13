@@ -1,6 +1,8 @@
 //Top Left is origin
 
 //*DEBUG
+var fps = 0
+
 var maxX = 1024
 var maxY = 1024
 
@@ -42,6 +44,8 @@ function main() {
     
     dt = timeSec - lastTime
     lastTime = timeSec
+    
+    fps = 0.001 / dt //DEBUG
     
     //console.log(dt) //DEBUG
     
