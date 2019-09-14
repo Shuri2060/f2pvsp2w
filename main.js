@@ -87,7 +87,7 @@ function main() {
           ctx.fillStyle = "#FFA500"
           break;
         } else {
-          ctx.fillStyle = "#000000"
+          ctx.fillStyle = "#FFFFFF"
         }
       }
       ctx.fill()
