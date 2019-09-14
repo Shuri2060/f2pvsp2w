@@ -98,7 +98,7 @@ function main() {
       
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
-      ctx.font = 0.2 * objArrI.r + 'px Consolas'
+      ctx.font = 1 + 0.3 * objArrI.r + 'px Consolas'
       ctx.fillStyle = '#000000'
       ctx.fillText(objArrI.playerHealth, (gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio))
     }
