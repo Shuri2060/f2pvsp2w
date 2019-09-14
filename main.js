@@ -95,6 +95,11 @@ function main() {
       ctx.lineWidth = 2
       ctx.stroke()
       ctx.closePath()
+      
+      ctx.textAlign = "center"
+      ctx.font = '12px Consolas'
+      ctx.fillStyle = '#FF0000'
+      ctx.fillText(objArrI.playerHealth, (gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio))
     }
     
     ctx.beginPath()
@@ -108,9 +113,10 @@ function main() {
       
       fps = 1 / dt
     }
-    ctx.font = '40px Consolas';
-    ctx.fillStyle = '#FF0000';
-    ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 200, gameTop + 60);
+    ctx.textAlign = "left"
+    ctx.font = '40px Consolas'
+    ctx.fillStyle = '#FF0000'
+    ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 200, gameTop + 60)
     
     requestAnimationFrame(beforeFrame)
   }
