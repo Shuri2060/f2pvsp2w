@@ -37,7 +37,13 @@ function update(dt) { //dt is time in seconds that have passed since last frame
 
 function afterColl(collisions, dt) { //collisions is an array of pairs of objects that collide
   for(let i = 0; i < collisions.length; i++) {
-    collisions[i][0].health -= 10 * dt
-    collisions[i][1].health -= 10 * dt   
-  }    
+    collisions[i][0].health -= 2 * dt
+    collisions[i][1].health -= 2 * dt
+    
+    if (collisions[i][0].health <= 0 || collisions[i][1].health <= 0) {
+      for (let j = objArr.length; j--;) {
+        if (objArr[j] === collisions[i][0] || objArr[j] === collisions[i][1] ) {objArr.splice(j, 1)}
+      } 
+    }
+  }
 }
