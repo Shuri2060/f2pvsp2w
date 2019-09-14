@@ -100,7 +100,7 @@ function main() {
       ctx.textBaseline = 'middle'
       ctx.font = 1 + 0.3 * objArrI.r + 'px Consolas'
       ctx.fillStyle = '#000000'
-      ctx.fillText(objArrI.health, (gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio))
+      ctx.fillText(objArrI.health | 0, (gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio))
     }
     
     ctx.beginPath()
