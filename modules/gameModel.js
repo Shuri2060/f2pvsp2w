@@ -22,7 +22,7 @@ var objArr = []
 
 for (let i = 0; i < 50; i++) {
   objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 40, vy: (Math.random() - 0.5) * 40, ax: (Math.random() - 0.5) * 0.01, ay: (Math.random() - 0.5) * 0.01, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 100})
-  objArr[i].playerHealth = 100
+  objArr[i].health = 100
 }
 //------------------------------------------------
 //Every frame, the below occurs. All custom code goes in update() and afterColl()
@@ -37,7 +37,7 @@ function update(dt) { //dt is time in seconds that have passed since last frame
 
 function afterColl(collisions, dt) { //collisions is an array of pairs of objects that collide
   for(let i = 0; i < collisions.length; i++) {
-    collisions[i][0].playerhealth -= 10 * dt
-    collisions[i][1].playerhealth -= 10 * dt   
+    collisions[i][0].health -= 10 * dt
+    collisions[i][1].health -= 10 * dt   
   }    
 }
