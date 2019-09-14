@@ -104,7 +104,7 @@ function main() {
     }
     
     ctx.beginPath()
-    ctx.strokeStyle = "#FFFFFF"
+    ctx.strokeStyle = "#00FF00"
     ctx.lineWidth = 4
     ctx.strokeRect(gameLeft+2, gameTop+2, gameWidth-4, gameHeight-4)
     
