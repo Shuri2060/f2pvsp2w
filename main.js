@@ -91,14 +91,14 @@ function main() {
         }
       }
       ctx.fill()
-      ctx.strokeStyle = "#000000"
+      ctx.strokeStyle = "#FFFFFF"
       ctx.lineWidth = 2
       ctx.stroke()
       ctx.closePath()
       
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
-      ctx.font = '12px Consolas'
+      ctx.font = 0.2 * objArrI.r + 'px Consolas'
       ctx.fillStyle = '#000000'
       ctx.fillText(objArrI.playerHealth, (gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio))
     }
