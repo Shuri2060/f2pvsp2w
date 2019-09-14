@@ -96,7 +96,8 @@ function main() {
       ctx.stroke()
       ctx.closePath()
       
-      ctx.textAlign = "center"
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
       ctx.font = '12px Consolas'
       ctx.fillStyle = '#000000'
       ctx.fillText(objArrI.playerHealth, (gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio))
@@ -113,7 +114,8 @@ function main() {
       
       fps = 1 / dt
     }
-    ctx.textAlign = "left"
+    ctx.textAlign = 'left'
+    ctx.textBaseline = 'alphabetic'
     ctx.font = '40px Consolas'
     ctx.fillStyle = '#FF0000'
     ctx.fillText(fps.toFixed(2) + ' fps', gameRight - 200, gameTop + 60)
