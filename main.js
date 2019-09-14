@@ -91,14 +91,14 @@ function main() {
         }
       }
       ctx.fill()
-      ctx.strokeStyle = "#FFFFFF"
+      ctx.strokeStyle = "#000000"
       ctx.lineWidth = 2
       ctx.stroke()
       ctx.closePath()
     }
     
     ctx.beginPath()
-    ctx.strokeStyle = "#FFFFFF"
+    ctx.strokeStyle = "#FF0000"
     ctx.lineWidth = 4
     ctx.strokeRect(gameLeft+2, gameTop+2, gameWidth-4, gameHeight-4)
     
