@@ -70,7 +70,7 @@ function main() {
     update(dt)
     simPhysics(objArr, dt)
     const collisions = colCheck(objArr)
-    afterColl(collisions)
+    afterColl(collisions, dt)
     
     //drawing
     ctx.clearRect(0, 0, canvas.width, canvas.height)
