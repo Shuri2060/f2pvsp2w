@@ -1,30 +1,9 @@
 //Top Left is origin
 
 //*DEBUG
+
 var fps = 0
 var fpsUpdate = 0
-
-maxX = 1024
-maxY = 1024
-
-grid = []
-gridCellX = 64
-gridCellY = 64
-gridX = maxX / gridCellX
-gridY = maxY / gridCellY
-
-for (let i = 0; i < gridX; i++) {
-  grid[i] = []
-  for (let j = 0; j < gridY; j++) {
-    grid[i][j] = []
-  }
-}
-
-var objArr = []
-for (let i = 0; i < 50; i++) {
-  objArr[i] = new Game2D2Object({sx: Math.random() * maxX, sy: Math.random() * maxY, vx: (Math.random() - 0.5) * 40, vy: (Math.random() - 0.5) * 40, ax: (Math.random() - 0.5) * 0.01, ay: (Math.random() - 0.5) * 0.01, as: (Math.random() - 0.5) * 4, av: (Math.random() - 0.5) * 10, aa: (Math.random() - 0.5) * 1, r: Math.random() * 100})
-}
-/**/
 
 function main() {
   const Math_PI = Math.PI
@@ -87,8 +66,11 @@ function main() {
     
     //All updating and drawing code... here!
     //updating
+    
+    update(dt)
     simPhysics(objArr, dt)
     const collisions = colCheck(objArr)
+    afterColl(collisions)
     
     //drawing
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -97,8 +79,8 @@ function main() {
       const objArrI = objArr[i]
       
       ctx.beginPath()
-//       ctx.strokeStyle = "#0000FF"
-//       ctx.lineWidth = 4
+      ctx.strokeStyle = "#0000FF"
+      ctx.lineWidth = 2
       //ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio) | 0, (gameTop + objArrI.sy * gameCanvasRatio) | 0, (objArrI.r * gameCanvasRatio) | 0, 0, Math_2PI)
       ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio), (objArrI.r * gameCanvasRatio), 0, Math_2PI)
       for (let j = collisions.length; j--;) {
@@ -111,8 +93,14 @@ function main() {
         }
       }
       ctx.fill()
+      ctx.stroke()
       ctx.closePath()
     }
+    
+    ctx.beginPath()
+    ctx.strokeStyle = "#FFFFFF"
+    ctx.lineWidth = 4
+    ctx.strokeRect(gameLeft, gameTop, gameWidth, gameHeight)
     
     //DEBUG
     if (time - fpsUpdate > 1000) {
