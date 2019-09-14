@@ -40,9 +40,12 @@ function afterColl(collisions, dt) { //collisions is an array of pairs of object
     collisions[i][0].health -= 2 * dt
     collisions[i][1].health -= 2 * dt
     
-    if (collisions[i][0].health <= 0 || collisions[i][1].health <= 0) {
+    const obj0Dead = (collisions[i][0].health <= 0)
+    const obj1Dead = (collisions[i][1].health <= 0)
+    
+    if (obj0Dead || obj1Dead) {
       for (let j = objArr.length; j--;) {
-        if (objArr[j] === collisions[i][0] || objArr[j] === collisions[i][1] ) {objArr.splice(j, 1)}
+        if ((obj0Dead && objArr[j] === collisions[i][0]) || (obj1Dead && objArr[j] === collisions[i][1])) {objArr.splice(j, 1)}
       } 
     }
   }
