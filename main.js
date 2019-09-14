@@ -100,7 +100,7 @@ function main() {
     ctx.beginPath()
     ctx.strokeStyle = "#FFFFFF"
     ctx.lineWidth = 4
-    ctx.strokeRect(gameLeft, gameTop, gameWidth, gameHeight)
+    ctx.strokeRect(gameLeft+2, gameTop+2, gameWidth-4, gameHeight-4)
     
     //DEBUG
     if (time - fpsUpdate > 1000) {
