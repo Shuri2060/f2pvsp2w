@@ -87,11 +87,11 @@ function main() {
           ctx.fillStyle = "#FFA500"
           break;
         } else {
-          ctx.fillStyle = "#FFFFFF"
+          ctx.fillStyle = "#00FF00"
         }
       }
       ctx.fill()
-      ctx.strokeStyle = "#FF0000"
+      ctx.strokeStyle = "#FFFFFF"
       ctx.lineWidth = 2
       ctx.stroke()
       ctx.closePath()
