@@ -81,13 +81,13 @@ function main() {
       ctx.beginPath()
       //ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio) | 0, (gameTop + objArrI.sy * gameCanvasRatio) | 0, (objArrI.r * gameCanvasRatio) | 0, 0, Math_2PI)
       ctx.arc((gameLeft + objArrI.sx * gameCanvasRatio), (gameTop + objArrI.sy * gameCanvasRatio), (objArrI.r * gameCanvasRatio), 0, Math_2PI)
+     
+      ctx.fillStyle = "#FFFFFF"
       for (let j = collisions.length; j--;) {
         const collJ = collisions[j]
         if (collJ[0] === objArrI || collJ[1] === objArrI) {
           ctx.fillStyle = "#FFA500"
           break;
-        } else {
-          ctx.fillStyle = "#FFFFFF"
         }
       }
       ctx.fill()
