@@ -87,11 +87,11 @@ function main() {
           ctx.fillStyle = "#FFA500"
           break;
         } else {
-          ctx.fillStyle = "#00FF00"
+          ctx.fillStyle = "#000000"
         }
       }
       ctx.fill()
-      ctx.strokeStyle = "#FFFFFF"
+      ctx.strokeStyle = "#FF0000"
       ctx.lineWidth = 2
       ctx.stroke()
       ctx.closePath()
@@ -104,7 +104,7 @@ function main() {
     }
     
     ctx.beginPath()
-    ctx.strokeStyle = "#FF0000"
+    ctx.strokeStyle = "#000000"
     ctx.lineWidth = 4
     ctx.strokeRect(gameLeft+2, gameTop+2, gameWidth-4, gameHeight-4)
     
