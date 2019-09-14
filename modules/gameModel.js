@@ -37,9 +37,7 @@ function update(dt) { //dt is time in seconds that have passed since last frame
 
 function afterColl(collisions, dt) { //collisions is an array of pairs of objects that collide
   for(let i = 0; i< collisions.length; i++) {
-   collisions[i][0].playerhealth -= 10*dt
-   collisions[i][1].playerhealth -= 10*dt
-   
-  }
-    
+    collisions[i][0].playerhealth -= 10*dt
+    collisions[i][1].playerhealth -= 10*dt   
+  }    
 }
