@@ -50,10 +50,10 @@ function afterColl(collisions, dt, ax, ay) { //collisions is an array of pairs o
     }
   }
   for(let i = 0;i < collisions.length; i++){
-    ax[i][0].ax = -ax
-    ax[i][1].ax = -ax
-    ay[i][0].ay = -ay
-    ay[i][1].ay = -ay
+    ax[i][0] = -ax
+    ax[i][1] = -ax
+    ay[i][0] = -ay
+    ay[i][1] = -ay
   }
     
     
