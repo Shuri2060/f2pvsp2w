@@ -35,11 +35,10 @@ function update(dt) { //dt is time in seconds that have passed since last frame
   
 }
 
-function afterColl(collisions, dt) { //collisions is an array of pairs of objects that collide
+function afterColl(collisions, dt , vx, vy , ax, ay) { //collisions is an array of pairs of objects that collide
   for(let i = 0; i < collisions.length; i++) {
     collisions[i][0].health -= 2 * dt
     collisions[i][1].health -= 2 * dt
-    
     const obj0Dead = (collisions[i][0].health <= 0)
     const obj1Dead = (collisions[i][1].health <= 0)
     
@@ -49,7 +48,15 @@ function afterColl(collisions, dt) { //collisions is an array of pairs of object
       } 
     }
   }
-
-    
+  
+  for(let i =0; i  <collisions.length; i++) {
+    collisions[i][0].vx *= -1
+    collisions[i][1].vx *= -1
+    collisions[i][0].vy *= -1
+    collisions[i][1].vy *= -1
+    collisions[i][0].ax *= -1
+    collisions[i][1].ax *= -1
+    collisions[i][0].ay *= -1
+    collisions[i][1].ay *= -1    
     
 }
