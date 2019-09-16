@@ -35,7 +35,7 @@ function update(dt) { //dt is time in seconds that have passed since last frame
   
 }
 
-function afterColl(collisions, dt, vx) { //collisions is an array of pairs of objects that collide
+function afterColl(collisions, dt) { //collisions is an array of pairs of objects that collide
   for(let i = 0; i < collisions.length; i++) {
     
     //collisions[i][0].vx = -1*vx
