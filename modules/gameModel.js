@@ -50,8 +50,8 @@ function afterColl(collisions, dt , vx, vy , ax, ay) { //collisions is an array 
   }
   
   for(let i =0; i  <collisions.length; i++) {
-    collisions[i][0].health -= -1
-    collisions[i][1].health -= -1    
+    collisions[i][0].health -= 1
+    collisions[i][1].health -= 1    
     collisions[i][0].vx *= -1
     collisions[i][1].vx *= -1
     collisions[i][0].vy *= -1
