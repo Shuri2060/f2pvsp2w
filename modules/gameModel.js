@@ -58,5 +58,5 @@ function afterColl(collisions, dt , vx, vy , ax, ay) { //collisions is an array 
     collisions[i][1].ax *= -1
     collisions[i][0].ay *= -1
     collisions[i][1].ay *= -1    
-    
+  }
 }
