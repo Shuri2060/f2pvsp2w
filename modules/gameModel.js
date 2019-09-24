@@ -48,6 +48,14 @@ function afterColl(collisions, dt , vx, vy , ax, ay) { //collisions is an array 
       for (let j = objArr.length; j--;) {
         if ((obj0Dead && objArr[j] === collisions[i][0]) || (obj1Dead && objArr[j] === collisions[i][1])) {objArr.splice(j, 1)}
       } 
+    if (obj0Dead || obj1Dead) {
+      for (let j = playerArr.length; j--;) {
+        if ((obj0Dead && playerArr[j] === collisions[i][0]) || (obj1Dead && playerArr[j] === collisions[i][1])) {playerArr.splice(j, 1)}
+      } 
+    if (obj0Dead || obj1Dead) {
+      for (let j = bulletArr.length; j--;) {
+        if ((obj0Dead && bulletArr[j] === collisions[i][0]) || (obj1Dead && bulletArr[j] === collisions[i][1])) {bulletArr.splice(j, 1)}
+      }  
     }
   }
   
