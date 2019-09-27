@@ -39,30 +39,32 @@ function update(dt) { //dt is time in seconds that have passed since last frame
 
 function afterColl(collisions, dt , vx, vy , ax, ay) { //collisions is an array of pairs of objects that collide
   for(let i = 0; i < collisions.length; i++) {
-    collisions[i][0].health -= 120 * dt
-    collisions[i][1].health -= 120 * dt   
-    collisions[i][0].vx *= -1
-    collisions[i][1].vx *= -1
-    collisions[i][0].vy *= -1
-    collisions[i][1].vy *= -1
-    collisions[i][0].ax *= -1
-    collisions[i][1].ax *= -1
-    collisions[i][0].ay *= -1
-    collisions[i][1].ay *= -1
-    const obj0Dead = (collisions[i][0].health <= 0)
-    const obj1Dead = (collisions[i][1].health <= 0)
+    const obj0 = collisions[i][0]
+    const obj1 = collisions[i][1]
+
+    const obj0spe = Math.sqrt(obj0.vx ** 2 + obj0.vy ** 2)
+    const obj1spe = Math.sqrt(obj1.vx ** 2 + obj1.vy ** 2)
+
+    obj0.health -= 1 * dt
+    obj1.health -= 1 * dt
+    obj0.ax += 0 //todo pen and paper
+    obj0.ay += 0
+    obj1.ax += 0
+    obj1.ay += 0
+    const obj0Dead = (obj0.health <= 0)
+    const obj1Dead = (obj1.health <= 0)
     
     if (obj0Dead || obj1Dead) {
       for (let j = objArr.length; j--;) {
-        if ((obj0Dead && objArr[j] === collisions[i][0]) || (obj1Dead && objArr[j] === collisions[i][1])) {objArr.splice(j, 1)}
+        if ((obj0Dead && objArr[j] === obj0) || (obj1Dead && objArr[j] === obj1)) {objArr.splice(j, 1)}
       } 
     if (obj0Dead || obj1Dead) {
       for (let j = playerArr.length; j--;) {
-        if ((obj0Dead && playerArr[j] === collisions[i][0]) || (obj1Dead && playerArr[j] === collisions[i][1])) {playerArr.splice(j, 1)}
+        if ((obj0Dead && playerArr[j] === obj0) || (obj1Dead && playerArr[j] === obj1)) {playerArr.splice(j, 1)}
       } 
     if (obj0Dead || obj1Dead) {
       for (let j = bulletArr.length; j--;) {
-        if ((obj0Dead && bulletArr[j] === collisions[i][0]) || (obj1Dead && bulletArr[j] === collisions[i][1])) {bulletArr.splice(j, 1)}
+        if ((obj0Dead && bulletArr[j] === obj0) || (obj1Dead && bulletArr[j] === obj1)) {bulletArr.splice(j, 1)}
       }  
     }
   }
